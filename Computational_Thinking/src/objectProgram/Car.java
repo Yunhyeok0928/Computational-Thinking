@@ -35,3 +35,25 @@ public class Car {
     }
 
 }
+
+
+class TestCar  {
+
+    public static void main(String[] args) {
+        Car testCar = new Car();
+        Car testCar2 = new Car();
+
+        
+        System.out.println(testCar);
+        System.out.println(testCar2);
+
+        testCar = testCar2;
+
+        System.out.println(testCar);
+        System.out.println(testCar2);
+
+        int[] arr = new int[3];
+    }
+
+
+}

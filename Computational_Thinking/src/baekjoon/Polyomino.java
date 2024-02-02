@@ -11,11 +11,13 @@ public class Polyomino {
 
 
         // 입력받기
-        String[] ss = br.readLine().split("\\.");
+        String ss = br.readLine();
+        String[] xs = ss.split("\\.");
 
-        for(int i = 0; i < ss.length; i++) {
 
-            String str = ss[i];
+        for(int i = 0; i < xs.length; i++) {
+
+            String str = xs[i];
 
             // 그리디 알고리즘으로 인해 가장 큰 것 부터 삭제해야됨.
             if ( str.length() % 2 != 0 ) {
@@ -29,14 +31,16 @@ public class Polyomino {
             }
 
             // 여기서 점을 찍어줘야돼.
-            if( i != ss.length-1) {
+            if( i != xs.length-1) {
                 sb.append(".");
             }
         }
 
+
+
         String answer = sb.toString();
-            if (answer.equals("-1")) {
-                sb.append(".".repeat(0));
+            if (!answer.equals("-1")) {
+               sb.append(".".repeat(ss.length()-sb.toString().length()));
             }
             System.out.println(sb);
         }
